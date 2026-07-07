@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — MDM MEHAK</title>
+<meta name="description" content="Explore recent websites, ad campaigns, SEO wins and AI video work from MDM MEHAK.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.filter-bar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:44px; }
+.filter-btn{ padding:9px 20px; border-radius:999px; border:1px solid var(--line); font-size:13.5px; font-weight:600; transition:all .3s var(--ease); }
+.filter-btn.active, .filter-btn:hover{ background:var(--ink); color:#fff; border-color:var(--ink); }
+.port-card[hidden]{ display:none; }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="MDM MEHAK logo"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-menu">
+          <a href="services/web-development.html">Web Development</a>
+          <a href="services/google-my-business.html">Google My Business</a>
+          <a href="services/social-media-ads.html">Social Media Ads</a>
+          <a href="services/google-ads.html">Google Ads</a>
+          <a href="services/ai-video.html">AI Video</a>
+          <a href="services/seo.html">SEO</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline on-light btn-sm">Get Free Consultation</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Portfolio</span></div>
+    <span class="eyebrow">Our work</span>
+    <h1>Projects built for growth, not just for show.</h1>
+    <p>A look at recent websites, ad campaigns, SEO wins and video work across categories.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="websites">Websites</button>
+      <button class="filter-btn" data-filter="google-ads">Google Ads</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="seo">SEO</button>
+      <button class="filter-btn" data-filter="ai-video">AI Video</button>
+      <button class="filter-btn" data-filter="gmb">Google Business</button>
+    </div>
+    <div class="grid-3" id="portGrid">
+      <div class="port-card reveal" data-cat="websites"><span class="port-tag">Websites</span><div><h3>Retail e-commerce rebuild</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="google-ads"><span class="port-tag">Google Ads</span><div><h3>D2C lead-gen scale-up</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="seo"><span class="port-tag">SEO</span><div><h3>Local services, page-1 rankings</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="social"><span class="port-tag">Social Media</span><div><h3>Fashion brand reel campaign</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="ai-video"><span class="port-tag">AI Video</span><div><h3>Product launch video series</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="gmb"><span class="port-tag">Google Business</span><div><h3>Clinic map-pack takeover</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="websites"><span class="port-tag">Websites</span><div><h3>Manufacturing company site</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="google-ads"><span class="port-tag">Google Ads</span><div><h3>SaaS demo-request campaign</h3><a class="case-link" href="#">Case study →</a></div></div>
+      <div class="port-card reveal" data-cat="social"><span class="port-tag">Social Media</span><div><h3>Restaurant chain awareness push</h3><a class="case-link" href="#">Case study →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad bg-dim">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="hero-glow"></div>
+      <span class="eyebrow" style="color:var(--gold-light); justify-content:center;">Ready when you are</span>
+      <h2 style="margin-top:18px;">Let's Grow Your Business Together</h2>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-gold">Get Free Consultation</a>
+        <a href="https://wa.me/919517769054" class="btn btn-outline">WhatsApp Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><img src="assets/logo.png" alt="MDM MEHAK"></div><p style="font-size:14px; max-width:280px;">A premium IT services &amp; digital marketing agency helping ambitious businesses grow through web, ads, SEO and content.</p></div>
+      <div><h5>Quick Links</h5><ul><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h5>Services</h5><ul><li><a href="services/web-development.html">Web Development</a></li><li><a href="services/seo.html">SEO</a></li><li><a href="services/google-ads.html">Google Ads</a></li></ul></div>
+      <div><h5>Get In Touch</h5><ul><li>hello@mdmmehak.com</li><li>+91 95177 69054</li><li>Ludhiana, Punjab, India</li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 MDM MEHAK. All rights reserved.</span><span>Privacy Policy · Terms of Service</span></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919517769054" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.94 9.94 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.87 14.24c-.25.7-1.45 1.34-2 1.42-.53.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.7-.62-2.98-1.28-4.93-4.28-5.08-4.48-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.06-2.5c.27-.3.6-.37.8-.37h.57c.18 0 .43-.02.66.5.25.6.85 2.08.92 2.24.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.3.38-.44.5-.15.15-.3.3-.13.6.17.3.75 1.24 1.62 2 1.12.98 2.06 1.29 2.37 1.44.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 2 .95.3.15.5.22.57.34.08.13.08.72-.17 1.42z"/></svg>
+</a>
+<div class="sticky-cta"><span>Ready to grow? Talk to us today.</span><a href="contact.html" class="btn btn-gold btn-sm">Get Quote</a></div>
+
+<script src="script.js"></script>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('#portGrid .port-card').forEach(card => {
+      card.hidden = f !== 'all' && card.dataset.cat !== f;
+    });
+  });
+});
+</script>
+</body>
+</html>

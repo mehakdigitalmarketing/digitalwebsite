@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — MDM MEHAK</title>
+<meta name="description" content="Insights on web development, SEO, Google Ads, social media marketing and AI video from the MDM MEHAK team.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.blog-search{ display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:8px 20px; max-width:360px; }
+.blog-search input{ border:none; outline:none; background:none; font-size:14px; flex:1; }
+.blog-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .4s var(--ease), box-shadow .4s var(--ease); }
+.blog-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+.blog-thumb{ aspect-ratio:16/10; background:linear-gradient(135deg,var(--paper-dim),#fff); display:flex; align-items:center; justify-content:center; color:var(--gold); border-bottom:1px solid var(--line); }
+.blog-body{ padding:26px; }
+.blog-body .cat{ font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-deep); font-weight:600; }
+.blog-body h3{ font-size:17px; margin:10px 0 8px; }
+.blog-body p{ font-size:13.5px; color:var(--gray); }
+.blog-body .meta{ margin-top:16px; font-size:12px; color:var(--gray-soft); }
+.blog-card[hidden]{ display:none; }
+.featured-post{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; background:var(--ink); border-radius:28px; padding:52px; color:#fff; margin-bottom:60px; }
+@media (max-width:860px){ .featured-post{ grid-template-columns:1fr; padding:36px; } }
+.featured-post .thumb{ aspect-ratio:16/11; background:linear-gradient(135deg,#2a2a2a,var(--ink)); border-radius:18px; display:flex; align-items:center; justify-content:center; color:var(--gold-light); }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="MDM MEHAK logo"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-menu">
+          <a href="services/web-development.html">Web Development</a>
+          <a href="services/google-my-business.html">Google My Business</a>
+          <a href="services/social-media-ads.html">Social Media Ads</a>
+          <a href="services/google-ads.html">Google Ads</a>
+          <a href="services/ai-video.html">AI Video</a>
+          <a href="services/seo.html">SEO</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline on-light btn-sm">Get Free Consultation</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Blog</span></div>
+    <span class="eyebrow">Insights</span>
+    <h1>Notes on growth — web, ads, SEO and AI video.</h1>
+    <p>Practical thinking from the team, without the fluff.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="featured-post reveal">
+      <div class="thumb"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+      <div>
+        <span class="eyebrow" style="color:var(--gold-light);">Featured</span>
+        <h2 style="color:#fff; margin-top:14px; font-size:1.7rem;">Why your Google My Business profile matters more than your website in 2026</h2>
+        <p style="color:rgba(250,248,243,0.7); margin-top:14px; font-size:14.5px;">Local search behaviour has shifted — here's what that means for where your marketing budget should go first.</p>
+        <a href="#" class="btn btn-gold btn-sm" style="margin-top:22px;">Read Article</a>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin-bottom:36px;">
+      <div class="blog-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="text" id="blogSearch" placeholder="Search articles..."></div>
+      <div class="filter-bar" style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="filter-btn active" data-cat="all" style="padding:8px 18px; border-radius:999px; border:1px solid var(--line); font-size:13px; font-weight:600;">All</button>
+        <button class="filter-btn" data-cat="seo" style="padding:8px 18px; border-radius:999px; border:1px solid var(--line); font-size:13px; font-weight:600;">SEO</button>
+        <button class="filter-btn" data-cat="ads" style="padding:8px 18px; border-radius:999px; border:1px solid var(--line); font-size:13px; font-weight:600;">Ads</button>
+        <button class="filter-btn" data-cat="web" style="padding:8px 18px; border-radius:999px; border:1px solid var(--line); font-size:13px; font-weight:600;">Web</button>
+        <button class="filter-btn" data-cat="video" style="padding:8px 18px; border-radius:999px; border:1px solid var(--line); font-size:13px; font-weight:600;">AI Video</button>
+      </div>
+    </div>
+
+    <div class="grid-3" id="blogGrid">
+      <div class="blog-card reveal" data-cat="seo" data-title="technical seo checklist for 2026"><div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><div class="blog-body"><span class="cat">SEO</span><h3>The technical SEO checklist we run on every new client</h3><p>The unglamorous fixes that unlock the rankings content alone can't reach.</p><div class="meta">6 min read</div></div></div>
+      <div class="blog-card reveal" data-cat="ads" data-title="google ads budget mistakes"><div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div class="blog-body"><span class="cat">Ads</span><h3>Three Google Ads budget mistakes that quietly drain spend</h3><p>Small structural errors that cost far more than they should.</p><div class="meta">5 min read</div></div></div>
+      <div class="blog-card reveal" data-cat="web" data-title="website speed conversion"><div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h7l-1 8 11-14h-7z"/></svg></div><div class="blog-body"><span class="cat">Web</span><h3>How much does site speed really affect conversion?</h3><p>We tested it across five client sites — the answer surprised us.</p><div class="meta">4 min read</div></div></div>
+      <div class="blog-card reveal" data-cat="video" data-title="ai video vs traditional production"><div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="M16 9l5-3v12l-5-3"/></svg></div><div class="blog-body"><span class="cat">AI Video</span><h3>AI video vs. traditional production: when to use each</h3><p>A practical framework for choosing the right production route.</p><div class="meta">7 min read</div></div></div>
+      <div class="blog-card reveal" data-cat="ads" data-title="social media ad creative fatigue"><div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M8 16h5M8 8h3"/></svg></div><div class="blog-body"><span class="cat">Ads</span><h3>Spotting ad creative fatigue before it hurts your CPA</h3><p>The leading indicators most dashboards don't show you.</p><div class="meta">5 min read</div></div></div>
+      <div class="blog-card reveal" data-cat="seo" data-title="local seo google my business"><div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.65-9.5 9-9.5 9z"/></svg></div><div class="blog-body"><span class="cat">SEO</span><h3>Local SEO in 2026: what's actually changed</h3><p>The map-pack ranking factors worth paying attention to now.</p><div class="meta">6 min read</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><img src="assets/logo.png" alt="MDM MEHAK"></div><p style="font-size:14px; max-width:280px;">A premium IT services &amp; digital marketing agency helping ambitious businesses grow through web, ads, SEO and content.</p></div>
+      <div><h5>Quick Links</h5><ul><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h5>Services</h5><ul><li><a href="services/web-development.html">Web Development</a></li><li><a href="services/seo.html">SEO</a></li><li><a href="services/google-ads.html">Google Ads</a></li></ul></div>
+      <div><h5>Get In Touch</h5><ul><li>hello@mdmmehak.com</li><li>+91 95177 69054</li><li>Ludhiana, Punjab, India</li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 MDM MEHAK. All rights reserved.</span><span>Privacy Policy · Terms of Service</span></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919517769054" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.94 9.94 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.87 14.24c-.25.7-1.45 1.34-2 1.42-.53.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.7-.62-2.98-1.28-4.93-4.28-5.08-4.48-.15-.2-1.22-1.62-1.22-3.1s.78-2.2 1.06-2.5c.27-.3.6-.37.8-.37h.57c.18 0 .43-.02.66.5.25.6.85 2.08.92 2.24.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.3.38-.44.5-.15.15-.3.3-.13.6.17.3.75 1.24 1.62 2 1.12.98 2.06 1.29 2.37 1.44.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 2 .95.3.15.5.22.57.34.08.13.08.72-.17 1.42z"/></svg>
+</a>
+<div class="sticky-cta"><span>Ready to grow? Talk to us today.</span><a href="contact.html" class="btn btn-gold btn-sm">Get Quote</a></div>
+
+<script src="script.js"></script>
+<script>
+const blogSearch = document.getElementById('blogSearch');
+const blogCards = document.querySelectorAll('#blogGrid .blog-card');
+function applyFilters(){
+  const cat = document.querySelector('.filter-bar .filter-btn.active').dataset.cat;
+  const q = blogSearch.value.toLowerCase();
+  blogCards.forEach(card => {
+    const matchesCat = cat === 'all' || card.dataset.cat === cat;
+    const matchesSearch = card.dataset.title.includes(q);
+    card.hidden = !(matchesCat && matchesSearch);
+  });
+}
+document.querySelectorAll('.filter-bar .filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  });
+});
+blogSearch.addEventListener('input', applyFilters);
+</script>
+</body>
+</html>
