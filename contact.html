@@ -66,19 +66,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container grid-2" style="gap:50px; align-items:flex-start;">
     <div class="form-card reveal">
       <h3 style="font-size:20px; margin-bottom:26px;">Send an enquiry</h3>
-      <form data-enquiry onsubmit="return false;">
+      <form data-enquiry onsubmit="return sendToWhatsApp(this);">
         <div class="form-row">
-          <div class="field"><label>Full Name</label><input type="text" required placeholder="Your name"></div>
-          <div class="field"><label>Company Name</label><input type="text" placeholder="Your company"></div>
+          <div class="field"><label>Full Name</label><input type="text" name="fullName" required placeholder="Your name"></div>
+          <div class="field"><label>Company Name</label><input type="text" name="companyName" placeholder="Your company"></div>
         </div>
         <div class="form-row">
-          <div class="field"><label>Email</label><input type="email" required placeholder="you@company.com"></div>
-          <div class="field"><label>Phone Number</label><input type="tel" required placeholder="+91 00000 00000"></div>
+          <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@company.com"></div>
+          <div class="field"><label>Phone Number</label><input type="tel" name="phone" required placeholder="+91 00000 00000"></div>
         </div>
         <div class="form-row">
           <div class="field">
             <label>Service Required</label>
-            <select>
+            <select name="service">
               <option>Web Development</option>
               <option>Google My Business</option>
               <option>Social Media Ads</option>
@@ -90,7 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="field">
             <label>Budget</label>
-            <select>
+            <select name="budget">
               <option>Under ₹25,000/mo</option>
               <option>₹25,000 – ₹50,000/mo</option>
               <option>₹50,000 – ₹1,00,000/mo</option>
@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </select>
           </div>
         </div>
-        <div class="field"><label>Message</label><textarea placeholder="Tell us a little about your business and goals"></textarea></div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us a little about your business and goals"></textarea></div>
         <button type="submit" class="btn btn-gold btn-block">Get Free Quote</button>
       </form>
     </div>
@@ -145,5 +145,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </a>
 
 <script src="script.js"></script>
+
+<!-- WhatsApp form submission -->
+<script>
+  function sendToWhatsApp(form) {
+    const fullName    = form.fullName.value.trim();
+    const companyName = form.companyName.value.trim();
+    const email       = form.email.value.trim();
+    const phone       = form.phone.value.trim();
+    const service     = form.service.value;
+    const budget      = form.budget.value;
+    const message     = form.message.value.trim();
+
+    if (!fullName || !email || !phone) {
+      alert("Kripya Name, Email te Phone Number bharo.");
+      return false;
+    }
+
+    let text = "Hi MDM MEHAK, main enquiry karna chahunda/chahundi haan:\n\n";
+    text += "*Name:* " + fullName + "\n";
+    if (companyName) text += "*Company:* " + companyName + "\n";
+    text += "*Email:* " + email + "\n";
+    text += "*Phone:* " + phone + "\n";
+    text += "*Service Required:* " + service + "\n";
+    text += "*Budget:* " + budget + "\n";
+    if (message) text += "*Message:* " + message + "\n";
+
+    const whatsappNumber = "919517769054";
+    const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+    return false;
+  }
+</script>
+
 </body>
 </html>
