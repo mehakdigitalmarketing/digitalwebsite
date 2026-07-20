@@ -174,7 +174,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const whatsappNumber = "919517769054";
     const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
 
+    // Open WhatsApp in a new tab
     window.open(url, "_blank");
+
+    // Redirect the current tab to the thank you page
+    window.location.href = "https://digitalwebsite-gamma.vercel.app/thankyou.html";
+
     return false;
   }
 </script>
